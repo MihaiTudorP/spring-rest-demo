@@ -26,7 +26,7 @@ public class StudentRestController {
 	
 	private List<Student> students;
 	
-	@GetMapping("/list-all")
+	@GetMapping("/")
 	public List<Student> getStudents(){
 		return students;
 	}
@@ -39,7 +39,7 @@ public class StudentRestController {
 		students.add(new Student("Michael", "Bale"));
 	}
 	
-	@GetMapping("/get-by-id/{studentId}")
+	@GetMapping("/{studentId}")
 	public Student getById(@PathVariable int studentId) {
 		if (studentId<1 || studentId > students.size())
 			throw new StudentNotFoundException(String.format("Student id not found: [%d]", studentId));
