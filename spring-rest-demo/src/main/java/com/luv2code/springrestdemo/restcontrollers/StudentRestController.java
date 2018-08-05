@@ -20,7 +20,7 @@ import com.luv2code.springrestdemo.model.Student;
 @RequestMapping("/students")
 public class StudentRestController {
 	
-	@GetMapping("/listall")
+	@GetMapping("/list-all")
 	public List<Student> getStudents(){
 		List<Student> students = new ArrayList<Student>();
 		
