@@ -1,14 +1,12 @@
 /**
  * 
  */
-package com.luv2code.springrestdemo.config;
+package com.luv2code.springrestdemo.exceptionhandlers;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.luv2code.springrestdemo.exceptionresponses.StudentExceptionResponse;
 import com.luv2code.springrestdemo.exceptions.StudentNotFoundException;
@@ -17,10 +15,8 @@ import com.luv2code.springrestdemo.exceptions.StudentNotFoundException;
  * @author Mihai-Tudor Popescu
  *
  */
-@Configuration
-@EnableWebMvc
-@ComponentScan("com.luv2code.springrestdemo")
-public class DemoAppConfig {
+@ControllerAdvice
+public class StudentRestExceptionHandler {
 	@ExceptionHandler
 	public ResponseEntity<StudentExceptionResponse> handleException(StudentNotFoundException e){
 		StudentExceptionResponse exceptionResp = new StudentExceptionResponse();
