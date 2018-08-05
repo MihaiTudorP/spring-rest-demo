@@ -18,4 +18,12 @@ public class StudentNotFoundException extends RuntimeException {
 		super(message);
 	}
 
+	public StudentNotFoundException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public StudentNotFoundException(Throwable cause) {
+		super(cause);
+	}
+
 }
